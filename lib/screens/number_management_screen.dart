@@ -23,7 +23,7 @@ class _ManageNumbersScreenState extends State<ManageNumbersScreen> {
     socketService.fetchPhoneNumbers();
 
     // Listen to fetch responses
-    socketService.socket.on('fetch_phone_numbers_response', (data) {
+    socketService.socket.on('get_available_numbers', (data) {
       setState(() {
         isLoading = false;
         // Parse incoming data and create PhoneNumber instances
@@ -79,7 +79,7 @@ class _ManageNumbersScreenState extends State<ManageNumbersScreen> {
     return Scaffold(
       appBar: AppBar(title: const Text('Manage Numbers')),
       body: isLoading
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : ListView.builder(
               itemCount: phoneNumbers.length,
               itemBuilder: (context, index) {
