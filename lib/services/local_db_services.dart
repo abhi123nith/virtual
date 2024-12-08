@@ -22,27 +22,27 @@ class SocketService {
     });
 
     // Listen for user creation response
-    socket.on('create_user_response', (data) {
+    socket.on('create_user', (data) {
       print('User created: $data');
     });
 
     // Listen for active numbers response
-    socket.on('get_active_numbers_response', (data) {
+    socket.on('get_active_numbers', (data) {
       print('Active numbers: $data');
     });
 
     // Listen for get available numbers response
-    socket.on('get_available_numbers_response', (data) {
+    socket.on('get_available_numbers', (data) {
       print('Available numbers for country: $data');
     });
 
     // Listen for message send response
-    socket.on('send_message_response', (data) {
+    socket.on('send_message', (data) {
       print('Message sent response: $data');
     });
 
     // Listen for fetched messages
-    socket.on('fetch_messages_response', (data) {
+    socket.on('fetch_messages', (data) {
       print('Fetched messages: $data');
     });
   }
